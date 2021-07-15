@@ -25,4 +25,9 @@ class Alumnos extends CI_Controller{
         $this->alumnos->update($a);
         echo json_encode(['success'=>true]);
     }
+    public function getReport($grado){
+        echo json_encode(
+            $this->alumnos->getreport($grado)
+        );
+    }
 }

@@ -27,4 +27,10 @@ class Home extends CI_Controller {
 		$param['action'] = base_url('alumnos/update/'.$id);
 		$this->load->view('form',$param);
 	}
+	public function reportes(){
+		$param['head'] = $this->load->view('template/head',false,true);
+		$param['nav'] = $this->load->view('template/nav',false,true);
+		$param['select'] = $this->alumnos->getGrados();
+		$this->load->view('reportes',$param);
+	}
 }
